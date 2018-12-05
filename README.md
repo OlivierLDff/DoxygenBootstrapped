@@ -74,7 +74,7 @@ In your CMakeLists simply defined all the inputs variable and add the folder.
 ```cmake
 SET( DOXYGEN_BOOTSTRAP_COMPANY YourCompany )
 SET( DOXYGEN_BOOTSTRAP_PUBLISHER You )
-SET( DOXYGEN_BOOTSTRAP_PROJECT_NAME YourProject} )
+SET( DOXYGEN_BOOTSTRAP_PROJECT_NAME YourProject )
 SET( DOXYGEN_BOOTSTRAP_PROJECT_VERSION YourProjectMajor.Minor.Patch )
 SET( DOXYGEN_BOOTSTRAP_PROJECT_BRIEF "Your Brief" )
 SET( DOXYGEN_BOOTSTRAP_PROJECT_LOGO Path/to/the/logo.png )
@@ -91,7 +91,7 @@ It is also possible to download the repository with the scripts inside `cmake/CM
 ```cmake
 SET( DOXYGEN_BOOTSTRAP_COMPANY YourCompany )
 SET( DOXYGEN_BOOTSTRAP_PUBLISHER You )
-SET( DOXYGEN_BOOTSTRAP_PROJECT_NAME YourProject} )
+SET( DOXYGEN_BOOTSTRAP_PROJECT_NAME YourProject )
 SET( DOXYGEN_BOOTSTRAP_PROJECT_VERSION YourProjectMajor.Minor.Patch )
 SET( DOXYGEN_BOOTSTRAP_PROJECT_BRIEF "Your Brief" )
 SET( DOXYGEN_BOOTSTRAP_PROJECT_LOGO Path/to/the/logo.png )
