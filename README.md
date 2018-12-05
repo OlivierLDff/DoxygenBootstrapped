@@ -43,5 +43,70 @@ NOTE: If you want to use the customdoxygen.css stylesheet from this repository, 
 
 See the example-site directory for a minimal working example.
 
+# CMake Integration
+
+It is possible to integrate this repository in your CMake build. This will generate a target than run the doxygen command.
+
+## CMake Variables
+
+### Input
+
+- **DOXYGEN_BOOTSTRAP_COMPANY** : Company that publish the project. *Default : "Company".*
+- **DOXYGEN_BOOTSTRAP_PUBLISHER** : Publisher that publish the project. *Default : "Publisher".*
+- **DOXYGEN_BOOTSTRAP_PROJECT_NAME** : Name of the project. *Default : "Project".*
+- **DOXYGEN_BOOTSTRAP_PROJECT_VERSION** : Version of the project. Default : 1.0.0.
+- **DOXYGEN_BOOTSTRAP_PROJECT_BRIEF** : Brief of the project. Default : Brief.
+- **DOXYGEN_BOOTSTRAP_PROJECT_LOGO** : Logo image of the project : *Default : "".*
+- **DOXYGEN_BOOTSTRAP_OUTPUT_DIRECTORY** : Output Directory for the doc of the project. *Default : "Docs".*
+- **DOXYGEN_BOOTSTRAP_SRC_DIRS** : Source directories of the project. *Default : "src".*
+- **DOXYGEN_BOOTSTRAP_README** : Markdown file for the first page. *Default : "README.md".*
+- **DOXYGEN_TARGET_PREFIX** : Doxygen target prefix.
+- **DOXYGEN_TARGET_SUFFIX** : Doxygen target suffix.
+
+### Output
+
+* **DOXYGEN_TARGET** : Generated target in the form  `${DOXYGEN_TARGET_PREFIX}${DOXYGEN_BOOTSTRAP_PROJECT_NAME}${DOXYGEN_TARGET_SUFFIX}`
+
+### How to use
+
+In your CMakeLists simply defined all the inputs variable and add the folder.
+
+```cmake
+SET( DOXYGEN_BOOTSTRAP_COMPANY YourCompany )
+SET( DOXYGEN_BOOTSTRAP_PUBLISHER You )
+SET( DOXYGEN_BOOTSTRAP_PROJECT_NAME YourProject} )
+SET( DOXYGEN_BOOTSTRAP_PROJECT_VERSION YourProjectMajor.Minor.Patch )
+SET( DOXYGEN_BOOTSTRAP_PROJECT_BRIEF "Your Brief" )
+SET( DOXYGEN_BOOTSTRAP_PROJECT_LOGO Path/to/the/logo.png )
+SET( DOXYGEN_BOOTSTRAP_OUTPUT_DIRECTORY "Docs" )
+SET( DOXYGEN_BOOTSTRAP_SRC_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/src )
+SET( DOXYGEN_BOOTSTRAP_README ${CMAKE_CURRENT_SOURCE_DIR}/README.md )
+SET( DOXYGEN_TARGET_PREFIX "" )
+SET( DOXYGEN_TARGET_SUFFIX "Doc" )
+ADD_SUBDIRECTORY(${CMAKE_CURRENT_SOURCE_DIR}/path/to/DoxygenBootstrappedCMake)
+```
+
+It is also possible to download the repository with the scripts inside `cmake/CMakeTemplate`. Simply call `BuildDoxygenBt.cmake`.
+
+```cmake
+SET( DOXYGEN_BOOTSTRAP_COMPANY YourCompany )
+SET( DOXYGEN_BOOTSTRAP_PUBLISHER You )
+SET( DOXYGEN_BOOTSTRAP_PROJECT_NAME YourProject} )
+SET( DOXYGEN_BOOTSTRAP_PROJECT_VERSION YourProjectMajor.Minor.Patch )
+SET( DOXYGEN_BOOTSTRAP_PROJECT_BRIEF "Your Brief" )
+SET( DOXYGEN_BOOTSTRAP_PROJECT_LOGO Path/to/the/logo.png )
+SET( DOXYGEN_BOOTSTRAP_OUTPUT_DIRECTORY "Docs" )
+SET( DOXYGEN_BOOTSTRAP_SRC_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/src )
+SET( DOXYGEN_BOOTSTRAP_README ${CMAKE_CURRENT_SOURCE_DIR}/README.md )
+SET( DOXYGEN_TARGET_PREFIX "" )
+SET( DOXYGEN_TARGET_SUFFIX "Doc" )
+SET( DOXYGEN_BT_REPOSITORY "https://github.com/OlivierLDff/DoxygenBootstrappedCMake.git" )
+SET( DOXYGEN_BT_TAG master )
+INCLUDE(path/to/BuildDoxygenBt.cmake)
+```
+
+An example is available in `cmake/example-site`.
+
 ## Todo List
+
 * Menu is not correctly displayed when Doxygen sidebar is enabled.
