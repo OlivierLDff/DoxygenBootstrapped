@@ -13,7 +13,7 @@
 MESSAGE(STATUS "Build Doxygen Bootstraped Started")
 # repository path & tag
 IF( NOT DOXYGEN_BT_REPOSITORY )
-	SET( DOXYGEN_BT_REPOSITORY "https://github.com/OlivierLDff/DoxygenBootstrappedCMake.git" CACHE STRING "DoxygenBootstrap repository, can be a local URL" FORCE )
+	SET( DOXYGEN_BT_REPOSITORY "https://github.com/OlivierLDff/DoxygenBootstrapped.git" CACHE STRING "DoxygenBootstrap repository, can be a local URL" FORCE )
 ENDIF()
 MESSAGE(STATUS "DoxygenBootstrap repository folder: " ${DOXYGEN_BT_REPOSITORY})
 
