@@ -464,7 +464,9 @@ span.SRScope {
 .page-header .label {
   font-size: 50%;
 }
-
+.memtitle {
+    display:none;
+}
 @media print
 {
   #top { display: none; }
