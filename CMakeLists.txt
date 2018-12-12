@@ -63,7 +63,7 @@ IF(DOXYGEN_FOUND)
 
     SET(DOXYGEN_TARGET ${DOXYGEN_TARGET_PREFIX}${DOXYGEN_BOOTSTRAP_PROJECT_NAME}${DOXYGEN_TARGET_SUFFIX})
     
-    MESSAGE( STATUS  "------ ${DOXYGEN_TARGET} Configuration v1.3.2 ------" )
+    MESSAGE( STATUS  "------ Doxygen Configuration v1.3.3 ------" )
 
     message(STATUS "DOXYGEN_BOOTSTRAP_COMPANY :           ${DOXYGEN_BOOTSTRAP_COMPANY}")
     message(STATUS "DOXYGEN_BOOTSTRAP_PUBLISHER :         ${DOXYGEN_BOOTSTRAP_PUBLISHER}")
@@ -76,7 +76,7 @@ IF(DOXYGEN_FOUND)
     message(STATUS "DOXYGEN_BOOTSTRAP_README :            ${DOXYGEN_BOOTSTRAP_README}")
     message(STATUS "DOXYGEN_TARGET :                      ${DOXYGEN_TARGET}")
 
-    MESSAGE( STATUS "------ ${DOXYGEN_TARGET} End Configuration ------" )
+    MESSAGE( STATUS "------ Doxygen End Configuration ------" )
 
 	# set input and output files
     set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/cmake/Doxyfile.in)
